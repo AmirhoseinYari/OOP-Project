@@ -3,7 +3,7 @@ public class Resistor extends Towports {
     private double R;
 
     //constructor
-    Resistor(String s) {
+    Resistor(String s) {//R1 1 0 3k
 
     }
 

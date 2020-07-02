@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d24bfc14-9147-47dc-b297-e8270eca81e4" name="Default Changelist" comment="" />
+    <list default="true" id="d24bfc14-9147-47dc-b297-e8270eca81e4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase0/LTI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase0/LTI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase0/Resistor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase0/Resistor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase0/Towports.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase0/Towports.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LTI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resistor.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +23,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Date.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Main.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1aAcOet2BNbG7YuyMNuEioI6r2g" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,6 +38,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="experimental" />
   </component>
   <component name="RunManager">
@@ -68,30 +85,30 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="662" y="452" width="467" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1792.1120@0.0.1792.1120" timestamp="1586962494041" />
-    <state width="1750" height="224" key="GridCell.Tab.0.bottom" timestamp="1586978149660">
+    <state width="1750" height="253" key="GridCell.Tab.0.bottom" timestamp="1593675512515">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="224" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1586978149660" />
+    <state width="1750" height="253" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1593675512515" />
     <state width="1750" height="224" key="GridCell.Tab.0.bottom/0.23.1792.1026@0.23.1792.1026" timestamp="1586347627335" />
-    <state width="1750" height="224" key="GridCell.Tab.0.center" timestamp="1586978149659">
+    <state width="1750" height="253" key="GridCell.Tab.0.center" timestamp="1593675512513">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="224" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1586978149659" />
+    <state width="1750" height="253" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1593675512513" />
     <state width="1750" height="224" key="GridCell.Tab.0.center/0.23.1792.1026@0.23.1792.1026" timestamp="1586347627335" />
-    <state width="1750" height="224" key="GridCell.Tab.0.left" timestamp="1586978149658">
+    <state width="1750" height="253" key="GridCell.Tab.0.left" timestamp="1593675512512">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="224" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1586978149658" />
+    <state width="1750" height="253" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1593675512512" />
     <state width="1750" height="224" key="GridCell.Tab.0.left/0.23.1792.1026@0.23.1792.1026" timestamp="1586347627334" />
-    <state width="1750" height="224" key="GridCell.Tab.0.right" timestamp="1586978149659">
+    <state width="1750" height="253" key="GridCell.Tab.0.right" timestamp="1593675512514">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="224" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1586978149659" />
+    <state width="1750" height="253" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1593675512514" />
     <state width="1750" height="224" key="GridCell.Tab.0.right/0.23.1792.1026@0.23.1792.1026" timestamp="1586347627335" />
-    <state x="573" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1586760339949">
-      <screen x="0" y="23" width="1792" height="1024" />
+    <state x="573" y="392" key="com.intellij.ide.util.TipDialog" timestamp="1593674815036">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="573" y="392" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1586534030866" />
+    <state x="573" y="392" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1593674815036" />
     <state x="573" y="381" key="com.intellij.ide.util.TipDialog/0.23.1792.1024@0.23.1792.1024" timestamp="1586760339949" />
     <state x="573" y="384" key="com.intellij.ide.util.TipDialog/0.23.1792.1031@0.23.1792.1031" timestamp="1586347675064" />
   </component>

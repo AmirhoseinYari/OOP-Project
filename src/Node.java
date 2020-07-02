@@ -4,6 +4,9 @@ public class Node { //normal node
     private double v;//voltage of node
     private Towports[] elements;//elements of neighbor nodes
 
+    boolean added;
+    int union;
+
     //constructors
     Node() {
 

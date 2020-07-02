@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LTI {
+public class Main {
     public static void main(String[] args) {
 
         Scanner scanf = new Scanner(System.in);
@@ -9,6 +9,3 @@ public class LTI {
 
     }
 }
-
-
-

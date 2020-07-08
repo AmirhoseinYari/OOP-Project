@@ -1,25 +1,28 @@
 public class Resistor extends Towports {
 
-    private double R;
+    double R;
 
     //constructor
     Resistor(String s) {//R1 1 0 3k
-        //Data.getNumber("3k");
+        super(s);
+        int i = s.indexOf(" ",s.indexOf(" ",s.indexOf(" ")+1)+1);//space before value
+        R = Data.getNumber(s.substring(i));
+        //System.out.println("name:"+name+" value:"+R+"  node+ "+node1.name+"  node- "+node2.name);//just for testing
     }
 
     //functions
     @Override
-    double getValue() {
+    double getValue(){
         return R;
     }
 
     @Override
-    double calI() {
-        return getV()/R;
+    double calI(double t) {
+        return v[(int)(t/Data.dT)]/R;
     }
 
     @Override
-    double calV() {
-        return R*getI();
+    double calV(double t) {
+        return R*i[(int)(t/Data.dT)];
     }
 }

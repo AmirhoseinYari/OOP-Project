@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 
@@ -9,6 +10,7 @@ public class Data {
     static double dV=-1,dI=-1,dT=-1,MaxT=-1;//MaxT is .tran time
     static int flag = 0;
     static ArrayList<Towports> elements = new ArrayList<>();//all elements of the circuit
+    static HashMap<String,Node> nodes = new HashMap<>();
 
     Data() throws IOException {
         File file = new File("input.txt");
@@ -37,14 +39,19 @@ public class Data {
                         setDIVT(s.get(i));
                         break;
                     case 'I':
+                        setI(s.get(i));
                         break;
                     case 'V':
+                        setV(s.get(i));
                         break;
                     case 'R':
+                        setR(s.get(i));
                         break;
                     case 'C':
+                        setC(s.get(i));
                         break;
                     case 'L':
+                        setL(s.get(i));
                         break;
                     case '.':
                         setMaxT(s.get(i));
@@ -61,9 +68,46 @@ public class Data {
         //out of while maybe because of an error (flag == 1)
         if(flag == 1)
             System.out.println("not a normal comment at line "+(i));//some comment is wrong (negative number or String to number problem)
-        else if(dV==-1||dI==-1||dT==-1||MaxT==-1)
+        else if(dV==-1||dI==-1||dT==-1||MaxT==-1) {
             System.out.println("-1 error");
+            flag = 1;//shouldn't run the code in solve class
+        }
 
+    }
+
+    void setI(String s){
+        Towports I = new CurrentSource(s);
+    }
+
+    void setV(String s){
+
+    }
+
+    void setR(String s){//R.....
+        Towports R = new Resistor(s);
+        if(R.getValue()==-1)
+            flag = 1;
+        R.node1.addElement(R);
+        R.node2.addElement(R);
+        elements.add(R);
+    }
+
+    void setC(String s){
+        Towports C = new Capacitor(s);
+        if(C.getValue()==-1)
+            flag = 1;
+        C.node1.addElement(C);
+        C.node2.addElement(C);
+        elements.add(C);
+    }
+
+    void setL(String s){
+        Towports L = new Capacitor(s);
+        if(L.getValue()==-1)
+            flag = 1;
+        L.node1.addElement(L);
+        L.node2.addElement(L);
+        elements.add(L);
     }
 
     void setDIVT(String s){//seting dI or dV or dT

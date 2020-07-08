@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 
 public class Data {
-    public ArrayList<String> s = new ArrayList<String>();//inputs from file
-    double dV,dI,dT;
-    int flag = 0;
+    public ArrayList<String> s = new ArrayList<>();//inputs from file
+    static double dV=-1,dI=-1,dT=-1,MaxT=-1;//MaxT is .tran time
+    static int flag = 0;
 
     Data() throws IOException {
         File file = new File("input.txt");
-        initial(file);//read the inputs
+        initial(file);//read the inputs from input.txt
         createCircuit();//making the circuit
     }
 
@@ -32,7 +32,7 @@ public class Data {
             if(s.get(i).charAt(0)!='*') {
                 char x = s.get(i).charAt(0);//x is the first char of the line
                 switch (x) {
-                    case 'd':
+                    case 'd'://dI || dV || dT
                         setDIVT(s.get(i));
                         break;
                     case 'I':
@@ -46,8 +46,10 @@ public class Data {
                     case 'L':
                         break;
                     case '.':
+                        setMaxT(s.get(i));
+                        //System.out.println("Max time is "+MaxT);//for testing
                         break;
-                    default:
+                    default://not a normal comment
                         flag = 1;
                         break;
                 }
@@ -55,7 +57,11 @@ public class Data {
 
             i++;
         }
-        System.out.println("not a normal comment at line "+(i+1));//some comment is wrong (negative number or String to number problem)
+        //out of while maybe because of an error (flag == 1)
+        if(flag == 1)
+            System.out.println("not a normal comment at line "+(i));//some comment is wrong (negative number or String to number problem)
+        else if(dV==-1||dI==-1||dT==-1||MaxT==-1)
+            System.out.println("-1 error");
 
     }
 
@@ -79,6 +85,20 @@ public class Data {
                     break;
             }
         }
+        else
+            flag = 1;//number problem
+    }
+
+    void setMaxT(String s){//seting .tran time  "MaxT"
+        double x = getNumber(s.substring(s.indexOf(" ")));
+        if(x!=-1){
+            if(s.substring(0,s.indexOf(" ")).equals(".tran"))
+                MaxT = x;
+            else//not a normal comment ".nadfnn"
+                flag = 1;
+        }
+        else
+            flag = 1;//number problem
     }
 
     double getNumber(String s){//for handeling p n u m k M G (s format is "1234M") [if the number is negative or String returns "-1" as an error]

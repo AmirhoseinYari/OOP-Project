@@ -4,7 +4,7 @@ public class Resistor extends Towports {
 
     //constructor
     Resistor(String s) {//R1 1 0 3k
-
+        //Data.getNumber("3k");
     }
 
     //functions

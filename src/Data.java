@@ -8,6 +8,7 @@ public class Data {
     public ArrayList<String> s = new ArrayList<>();//inputs from file
     static double dV=-1,dI=-1,dT=-1,MaxT=-1;//MaxT is .tran time
     static int flag = 0;
+    static ArrayList<Towports> elements = new ArrayList<>();//all elements of the circuit
 
     Data() throws IOException {
         File file = new File("input.txt");
@@ -101,7 +102,7 @@ public class Data {
             flag = 1;//number problem
     }
 
-    double getNumber(String s){//for handeling p n u m k M G (s format is "1234M") [if the number is negative or String returns "-1" as an error]
+    static double getNumber(String s){//for handeling p n u m k M G (s format is "1234M") [if the number is negative or String returns "-1" as an error]
         double x;
 
         try {

@@ -9,7 +9,6 @@ public class CurrentSource extends Towports {
     CurrentSource(String s) {//Iin 1 0 5 0 0 0
         super(s);//setting name and nodes
         int i = s.indexOf(" ",s.indexOf(" ",s.indexOf(" ")+1)+1);//third space
-        System.out.println(s.substring(i+1,s.indexOf(" ",i+1)));
         I = Data.getNumber(s.substring(i+1,s.indexOf(" ",i+1)));
         i = s.indexOf(" ",i+1);
         A = Data.getNumber(s.substring(i+1,s.indexOf(" ",i+1)));
@@ -17,7 +16,7 @@ public class CurrentSource extends Towports {
         f = Data.getNumber(s.substring(i+1,s.indexOf(" ",i+1)));
         i = s.indexOf(" ",i+1);
         phi = Data.getNumber(s.substring(i+1));
-        System.out.println("name:"+name+" DC:"+I+"  node+ "+node1.name+" node-"+node2.name+"  AC:"+A+" f:"+f+" phi:"+phi);
+        System.out.println("name:"+name+" DC:"+I+"  node+"+node1.name+" node-"+node2.name+"  AC:"+A+" f:"+f+" phi:"+phi);
     }
 
     //functions

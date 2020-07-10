@@ -53,6 +53,8 @@ public class Data {
                     case 'L':
                         setL(s.get(i));
                         break;
+                    case 'D':
+                        break;
                     case '.':
                         setMaxT(s.get(i));
                         //System.out.println("Max time is "+MaxT);//for testing
@@ -77,9 +79,20 @@ public class Data {
 
     void setI(String s){
         Towports I = new CurrentSource(s);
+        if(I.getValue()==-1)
+            flag = 1;//just the DC part
+        I.node1.addElement(I);
+        I.node2.addElement(I);
+        elements.add(I);
     }
 
     void setV(String s){
+        Towports V = new VoltageSource(s);
+        if(V.getValue()==-1)
+            flag = 1;//just the DC part
+        V.node1.addElement(V);
+        V.node2.addElement(V);
+        elements.add(V);
 
     }
 
@@ -150,7 +163,10 @@ public class Data {
         double x;
 
         try {
-            x = Double.parseDouble(s.substring(0, s.length() - 1));
+            if(s.length()>1)
+                x = Double.parseDouble(s.substring(0, s.length() - 1));
+            else
+                x = Double.parseDouble(s);
         }
         catch (Exception e){
             //System.out.println("exception "+s.substring(0, s.length() - 1));//just for testing

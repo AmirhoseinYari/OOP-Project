@@ -6,7 +6,9 @@ public class Main {
 
         //Scanner scanf = new Scanner(System.in);
         //Towports r1 = new Resistor(scanf.nextLine());
+
         Data data = new Data();
-        System.out.println(Data.getNumber("2"));//problem
+        Solve solve = new Solve();
+
     }
 }

@@ -3,10 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="d24bfc14-9147-47dc-b297-e8270eca81e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase0/Resistor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase0/Towports.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phase0.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Capacitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Capacitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CurrentSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Diode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Diode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resistor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Solve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Towports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Towports.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Union.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Union.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VoltageSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VoltageSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,25 +112,25 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="520" y="162" key="CommitChangelistDialog2/0.0.1792.1120@0.0.1792.1120" timestamp="1593696332679" />
-    <state width="1750" height="253" key="GridCell.Tab.0.bottom" timestamp="1594362533631">
+    <state width="1750" height="253" key="GridCell.Tab.0.bottom" timestamp="1594476088490">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="253" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1594362533631" />
+    <state width="1750" height="253" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1594476088490" />
     <state width="1750" height="224" key="GridCell.Tab.0.bottom/0.23.1792.1026@0.23.1792.1026" timestamp="1586347627335" />
-    <state width="1750" height="253" key="GridCell.Tab.0.center" timestamp="1594362533629">
+    <state width="1750" height="253" key="GridCell.Tab.0.center" timestamp="1594476088488">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="253" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1594362533629" />
+    <state width="1750" height="253" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1594476088488" />
     <state width="1750" height="224" key="GridCell.Tab.0.center/0.23.1792.1026@0.23.1792.1026" timestamp="1586347627335" />
-    <state width="1750" height="253" key="GridCell.Tab.0.left" timestamp="1594362533627">
+    <state width="1750" height="253" key="GridCell.Tab.0.left" timestamp="1594476088488">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="253" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1594362533627" />
+    <state width="1750" height="253" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1594476088488" />
     <state width="1750" height="224" key="GridCell.Tab.0.left/0.23.1792.1026@0.23.1792.1026" timestamp="1586347627334" />
-    <state width="1750" height="253" key="GridCell.Tab.0.right" timestamp="1594362533630">
+    <state width="1750" height="253" key="GridCell.Tab.0.right" timestamp="1594476088489">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="253" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1594362533630" />
+    <state width="1750" height="253" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1594476088489" />
     <state width="1750" height="224" key="GridCell.Tab.0.right/0.23.1792.1026@0.23.1792.1026" timestamp="1586347627335" />
     <state x="573" y="392" key="com.intellij.ide.util.TipDialog" timestamp="1594204357784">
       <screen x="0" y="0" width="1792" height="1120" />

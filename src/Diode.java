@@ -2,12 +2,13 @@ public class Diode extends Towports { //ideal diode
 
     //constructor
     Diode(String s) {
-
+        super(s);
+        //System.out.println("diode constructor called");//just for test
     }
 
     //functions
     @Override
-    double getValue() { //ideal diode doesn't have any value
+    double getValue(double t) { //ideal diode doesn't have any value
         return 0;
     }
 

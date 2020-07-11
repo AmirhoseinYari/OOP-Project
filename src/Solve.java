@@ -3,6 +3,7 @@ public class Solve {
     //properties
     double t;//present time
     double dV=-1,dI=-1,dT=-1,MaxT=-1;//MaxT is .tran time
+    int itr;//itr
 
     //constructors
     Solve(){

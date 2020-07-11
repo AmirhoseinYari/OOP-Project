@@ -12,17 +12,18 @@ public class Resistor extends Towports {
 
     //functions
     @Override
-    double getValue(){
+    double getValue(double t){
         return R;
     }
 
     @Override
     double calI(double t) {
-        return v[(int)(t/Data.dT)]/R;
+        return calV(t)/R;
     }
 
     @Override
     double calV(double t) {
-        return R*i[(int)(t/Data.dT)];
+        int itr = (int)(t/Data.dT);
+        return node1.v[itr]-node2.v[itr];
     }
 }

@@ -50,7 +50,7 @@ public abstract class Towports { //element abstraction
     //functions
 
     //abstract functions
-    abstract double getValue();
+    abstract double getValue(double t);
 
     abstract double calI(double t);//calculate I from V
 

@@ -6,11 +6,18 @@ import java.util.Scanner;
 
 
 public class Data {
+
     public ArrayList<String> s = new ArrayList<>();//inputs from file
+
     static double dV=-1,dI=-1,dT=-1,MaxT=-1;//MaxT is .tran time
     static int flag = 0;
+
     static ArrayList<Towports> elements = new ArrayList<>();//all elements of the circuit
-    static HashMap<String,Node> nodes = new HashMap<>();
+    static HashMap<String,Towports> elementsHM = new HashMap<>();//name of the element, element
+
+    static HashMap<String,Node> nodes = new HashMap<>();//name of the node, node
+    //static ArrayList<Node> nodesAL = new ArrayList<>();//nodes in a array list
+
 
     Data() throws IOException {
         File file = new File("input.txt");
@@ -39,10 +46,22 @@ public class Data {
                         setDIVT(s.get(i));
                         break;
                     case 'I':
-                        setI(s.get(i));
+                        setI(s.get(i),0);
+                        break;
+                    case 'G':
+                        setI(s.get(i),1);
+                        break;
+                    case 'F':
+                        setI(s.get(i),2);
                         break;
                     case 'V':
-                        setV(s.get(i));
+                        setV(s.get(i),0);
+                        break;
+                    case 'E':
+                        setV(s.get(i),1);
+                        break;
+                    case 'H':
+                        setV(s.get(i),2);
                         break;
                     case 'R':
                         setR(s.get(i));
@@ -54,6 +73,7 @@ public class Data {
                         setL(s.get(i));
                         break;
                     case 'D':
+                        setD(s.get(i));
                         break;
                     case '.':
                         setMaxT(s.get(i));
@@ -77,50 +97,62 @@ public class Data {
 
     }
 
-    void setI(String s){
-        Towports I = new CurrentSource(s);
-        if(I.getValue()==-1)
+    void setI(String s, int f){//f =   0 is normal / 1 is G / 2 is F
+        Towports I = new CurrentSource(s,f);
+        if(I.getValue(0)==-1)
             flag = 1;//just the DC part
         I.node1.addElement(I);
         I.node2.addElement(I);
         elements.add(I);
+        elementsHM.put(I.name,I);
     }
 
-    void setV(String s){
-        Towports V = new VoltageSource(s);
-        if(V.getValue()==-1)
+    void setV(String s, int f){//f =   0 is normal / 1 is E / 2 is H
+        Towports V = new VoltageSource(s,f);
+        if(V.getValue(0)==-1)
             flag = 1;//just the DC part
         V.node1.addElement(V);
         V.node2.addElement(V);
         elements.add(V);
-
+        elementsHM.put(V.name,V);
     }
 
     void setR(String s){//R.....
         Towports R = new Resistor(s);
-        if(R.getValue()==-1)
+        if(R.getValue(0)==-1)
             flag = 1;
         R.node1.addElement(R);
         R.node2.addElement(R);
         elements.add(R);
+        elementsHM.put(R.name,R);
     }
 
     void setC(String s){
         Towports C = new Capacitor(s);
-        if(C.getValue()==-1)
+        if(C.getValue(0)==-1)
             flag = 1;
         C.node1.addElement(C);
         C.node2.addElement(C);
         elements.add(C);
+        elementsHM.put(C.name,C);
     }
 
     void setL(String s){
         Towports L = new Capacitor(s);
-        if(L.getValue()==-1)
+        if(L.getValue(0)==-1)
             flag = 1;
         L.node1.addElement(L);
         L.node2.addElement(L);
         elements.add(L);
+        elementsHM.put(L.name,L);
+    }
+
+    void setD(String s){
+        Towports D = new Diode(s);
+        D.node1.addElement(D);
+        D.node2.addElement(D);
+        elements.add(D);
+        elementsHM.put(D.name,D);
     }
 
     void setDIVT(String s){//seting dI or dV or dT

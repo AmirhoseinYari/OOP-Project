@@ -12,7 +12,7 @@ public class Capacitor extends Towports {
 
     //functions
     @Override
-    double getValue() {
+    double getValue(double t) {
         return C;
     }
 

@@ -18,13 +18,19 @@ public class Inductor extends Towports {
 
     @Override
     double calI(double t) {
-        //to do
-        return 0;//integral of V/L
+        int itr = (int)(t/Data.dT);
+        if(itr == 0) {
+            i[0] = 0;
+            return 0;
+        }
+        i[itr] = i[itr-1] + calV(t)/L*Data.dT;
+        return i[itr];//integral of V/L (calV(t) or calV(t-dt) ?!!!)
     }
 
     @Override
     double calV(double t) {
-        //to do
-        return 0;//L*dI/dt
+        int itr = (int)(t/Data.dT);
+        v[itr] = node1.v[itr]-node2.v[itr];
+        return v[itr];
     }
 }

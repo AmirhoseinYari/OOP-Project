@@ -14,17 +14,22 @@ public class Diode extends Towports { //ideal diode
 
     @Override
     double calI(double t) {
-        if(v[(int)(t/Data.dT)]<0)
+        int itr = (int)(t/Data.dT);
+        if(v[itr]<=0) {
+            i[itr] = 0;
             return 0;
+        }
         else
-            return -1;//to do (KCL)
+            return -0;//to do (KCL)
     }
 
     @Override
     double calV(double t) {
-        if(i[(int)(t/Data.dT)]>0)
+        int itr = (int)(t/Data.dT);
+        v[itr] = node1.v[itr] - node2.v[itr];
+        if(i[itr]>0)
             return 0;
         else
-            return v[(int)(t/Data.dT)];//!!
+            return v[itr];//!!
     }
 }

@@ -4,7 +4,11 @@ public class CurrentSource extends Towports {
     double A;//domain of the AC part
     double f;//frequency
     double phi;//sin(2*pi*f*t + phi)
+
     int flag;//0 is normal / 1 is G / 2 is F
+    int a;//for dependent current sources (G & F)
+    Node n1,n2;//for dependent current source G
+    Towports element;//for dependent current source F
 
     //constructor
     CurrentSource(String s, int flag) {//Iin i j 5 0 0 0  || G || F
@@ -31,11 +35,24 @@ public class CurrentSource extends Towports {
 
     @Override
     double calI(double t) {
-        return I;
+        int itr = (int)(t/Data.dT);
+        if(flag == 0)//independent
+            if(A == 0)//DC
+                i[itr] = I;
+            else//AC
+                i[itr] = I + A * Math.sin(2*Math.PI*f*t+phi);
+        if(flag == 1)//G
+            i[itr] = a*(n1.v[itr]-n2.v[itr]);
+        if(flag == 2)//F
+            i[itr] = a*element.calI(t);
+
+        return i[itr];
     }
 
     @Override
     double calV(double t) {
-        return -1;
+        int itr = (int)(t/Data.dT);
+        v[itr] = node1.v[itr]-node2.v[itr];
+        return v[itr];
     }
 }

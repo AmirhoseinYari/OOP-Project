@@ -16,7 +16,7 @@ public class Data {
     static HashMap<String,Towports> elementsHM = new HashMap<>();//name of the element, element
 
     static HashMap<String,Node> nodes = new HashMap<>();//name of the node, node
-    //static ArrayList<Node> nodesAL = new ArrayList<>();//nodes in a array list
+    static ArrayList<Node> nodesAL = new ArrayList<>();//nodes in a array list
 
 
     Data() throws IOException {

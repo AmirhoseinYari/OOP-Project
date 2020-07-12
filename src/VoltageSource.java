@@ -4,7 +4,11 @@ public class VoltageSource extends Towports {
     double A;//domain of the AC part
     double f;//frequency
     double phi;//sin(2*pi*f*t + phi)
+
     int flag;//0 is normal / 1 is E / 2 is H
+    int a;//for dependent voltage sources (E & H)
+    Node n1,n2;//for dependent voltage source E
+    Towports element;//for dependent current source H
 
     //constructor
     VoltageSource(String s, int flag) {//V1 i j 5  0 0 0
@@ -31,11 +35,22 @@ public class VoltageSource extends Towports {
 
     @Override
     double calI(double t) {
-        return -1;//to do (KCL)
+        return 0;//to do (KCL)
     }
 
     @Override
     double calV(double t) {
-        return V;
+        int itr = (int)(t/Data.dT);
+        if(flag == 0)//independent
+            if(A == 0)//DC
+                v[itr] = V;
+            else//AC
+                v[itr] = V + A * Math.sin(2*Math.PI*f*t+phi);
+        if(flag == 1)//E
+            v[itr] = a*(n1.v[itr]-n2.v[itr]);
+        if(flag == 2)//H
+            v[itr] = a*element.calI(t);
+
+        return v[itr];
     }
 }

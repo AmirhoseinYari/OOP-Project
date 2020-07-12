@@ -7,8 +7,8 @@ public class Main {
         //Scanner scanf = new Scanner(System.in);
         //Towports r1 = new Resistor(scanf.nextLine());
 
-        Data data = new Data();
-        Solve solve = new Solve();
+        Data data = new Data();//getting the data and creating the circuit
+        Solve solve = new Solve();//solving the circuit and checking errors
 
     }
 }

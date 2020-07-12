@@ -24,19 +24,31 @@ public abstract class Towports { //element abstraction
             if(!Data.nodes.containsKey(n2)){//create node 1&2
                 node1 = new Node(n1);
                 node2 = new Node(n2);
+
                 Data.nodes.put(n1,node1);
                 Data.nodes.put(n2,node2);
+
+                Data.nodesAL.add(node1);
+                Data.nodesAL.add(node2);
             }
             else{//only create node 1
                 node1 = new Node(n1);
+
                 Data.nodes.put(n1,node1);
+
+                Data.nodesAL.add(node1);
+
                 node2 = Data.nodes.get(n2);
             }
         }
         else{
             if(!Data.nodes.containsKey(n2)){//only create node 2
                 node2 = new Node(n2);
+
                 Data.nodes.put(n2,node2);
+
+                Data.nodesAL.add(node2);
+
                 node1 = Data.nodes.get(n1);
             }
             else{//both nodes exist

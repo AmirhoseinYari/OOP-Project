@@ -18,13 +18,16 @@ public class Capacitor extends Towports {
 
     @Override
     double calI(double t) {
-        //to do
-        return 0;//C*dv/dt
+        int itr = (int)(t/Data.dT);
+        if(itr == 0) return 0;
+        i[itr] = C*(calV(t)-calV(t-Data.dT))/Data.dT;
+        return i[itr];//C*dv/dt
     }
 
     @Override
     double calV(double t) {
-        //to do
-        return 0;//integral of di/C + V0
+        int itr = (int)(t/Data.dT);
+        v[itr] = node1.v[itr] - node2.v[itr];
+        return v[itr];//integral of di/C + V0
     }
 }

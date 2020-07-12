@@ -8,6 +8,7 @@ public class Node { //normal node
     //double t;//time at the moment
     ArrayList<Towports> elements = new ArrayList<>();//elements of neighbor nodes
     HashMap<Towports,Node> neighborNodes = new HashMap<>();//only neighbor nodes in hash map
+    ArrayList<Node> nodes = new ArrayList<>();//neighbor nodes in array list
 
     boolean added;
     int union;
@@ -16,16 +17,40 @@ public class Node { //normal node
     Node() {
 
     }
+
     Node(String s) {
         this.name = s;
+        added = false;
+        union = Integer.parseInt(s);
     }
 
     //functions
     void addElement(Towports element){
         elements.add(element);
+        String n1 = element.node1.name, n2 = element.node2.name;
+        if(n1.equals(name)){
+            neighborNodes.put(element,Data.nodes.get(n2));
+            nodes.add(Data.nodes.get(n2));
+        }
+        else {
+            neighborNodes.put(element,Data.nodes.get(n1));
+            nodes.add(Data.nodes.get(n1));
+        }
     }
 
     double inCurrent(double t){//input current
-        return -1;
+        int itr = (int)(t/Data.dT);
+        double i = 0;
+        for(Towports x : elements)
+            if(x.node2.name.equals(name))
+                i += x.calI(t);
+            else
+                i -= x.calI(t);
+
+        return i;//input current
+    }
+
+    void print(){//only for test
+        System.out.println("node"+name+" N:"+elements.size());//node1 N:3
     }
 }

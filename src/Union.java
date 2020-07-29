@@ -38,6 +38,10 @@ public class Union {
         return i;
     }
 
+    void setVoltages(double t){//set other Nodes voltages at time t
+
+    }
+
     void addNode(Node n){//adding another node
         n.union = name;
         n.added = true;

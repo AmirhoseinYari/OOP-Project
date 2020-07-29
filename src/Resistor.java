@@ -6,7 +6,7 @@ public class Resistor extends Towports {
     Resistor(String s) {//R1 1 0 3k
         super(s);
         int i = s.indexOf(" ",s.indexOf(" ",s.indexOf(" ")+1)+1);//space before value
-        R = Data.getNumber(s.substring(i));
+        R = Data.getNumber(s.substring(i+1));
         //System.out.println("name:"+name+" value:"+R+"  node+ "+node1.name+"  node- "+node2.name);//just for testing
     }
 

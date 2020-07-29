@@ -193,7 +193,6 @@ public class Data {
 
     static double getNumber(String s){//for handeling p n u m k M G (s format is "1234M") [if the number is negative or String returns "-1" as an error]
         double x;
-
         try {
             if(s.length()>1)
                 x = Double.parseDouble(s.substring(0, s.length() - 1));

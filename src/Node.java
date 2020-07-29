@@ -25,6 +25,7 @@ public class Node { //normal node
         //union = Integer.parseInt(s);
         union = s;
         error2 = 0;
+        v = new double[100000];
     }
 
     //functions
@@ -54,6 +55,6 @@ public class Node { //normal node
     }
 
     void print(){//only for test
-        System.out.println("node"+name+" N:"+elements.size()+" added:"+added);//node1 N:3
+        System.out.println("node"+name+" N:"+elements.size()+" added:"+added+" Union:"+union);//node1 N:3
     }
 }

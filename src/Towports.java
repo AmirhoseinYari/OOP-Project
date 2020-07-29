@@ -57,6 +57,8 @@ public abstract class Towports { //element abstraction
             }
         }
         //name and node1 and node2 are OK
+        this.i = new double[100000];
+        v = new double[100000];
     }
 
     //functions

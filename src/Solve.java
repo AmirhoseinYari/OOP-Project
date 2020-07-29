@@ -38,7 +38,7 @@ public class Solve {
     }
 
     void solve(){
-
+        System.out.println(unions.get(1).inCurrent(0));
     }
 
     void error2check(){//for checking -2 error  (current source problems)

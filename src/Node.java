@@ -11,7 +11,8 @@ public class Node { //normal node
     ArrayList<Node> nodes = new ArrayList<>();//neighbor nodes in array list
 
     boolean added;
-    int union;
+    String union;
+    int error2;
 
     //constructors
     Node() {
@@ -21,7 +22,9 @@ public class Node { //normal node
     Node(String s) {
         this.name = s;
         added = false;
-        union = Integer.parseInt(s);
+        //union = Integer.parseInt(s);
+        union = s;
+        error2 = 0;
     }
 
     //functions
@@ -51,6 +54,6 @@ public class Node { //normal node
     }
 
     void print(){//only for test
-        System.out.println("node"+name+" N:"+elements.size());//node1 N:3
+        System.out.println("node"+name+" N:"+elements.size()+" added:"+added);//node1 N:3
     }
 }

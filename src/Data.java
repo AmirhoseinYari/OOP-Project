@@ -10,7 +10,7 @@ public class Data {
     public ArrayList<String> s = new ArrayList<>();//inputs from file
 
     static double dV=-1,dI=-1,dT=-1,MaxT=-1;//MaxT is .tran time
-    static int flag = 0;
+    static int flag = 0;//for errors (-1, -2, ...)
 
     static ArrayList<Towports> elements = new ArrayList<>();//all elements of the circuit
     static HashMap<String,Towports> elementsHM = new HashMap<>();//name of the element, element

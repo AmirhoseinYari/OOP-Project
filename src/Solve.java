@@ -18,12 +18,23 @@ public class Solve {
         MaxT = Data.MaxT;
         itr = 0;// t/dT
         createUnions();
+        error2check();
         solve();
     }
 
     //functions
     void createUnions(){
-        System.out.println("making unions");
+        //System.out.println("making unions" + "   all nodes : "+Data.nodesAL.size());
+        unions.add(new Union(Data.nodes.get("0")));
+        for(Node n : Data.nodesAL){
+            if(n.added == false&&!n.name.equals("0")) {
+                unions.add(new Union(n));
+            }
+        }
+
+        //for test
+//        for (Union u : unions)
+//            u.print();
     }
 
     void solve(){
@@ -31,7 +42,9 @@ public class Solve {
     }
 
     void error2check(){//for checking -2 error  (current source problems)
-
+        for(Node n : Data.nodesAL)
+            if(n.error2>1) Data.flag=2;
+         if(Data.flag==2) System.out.println("-2 error");
     }
 
     void error3check(){//for checking -3 error  (voltage source problems)

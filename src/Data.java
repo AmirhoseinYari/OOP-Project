@@ -158,7 +158,7 @@ public class Data {
     void setDIVT(String s){//seting dI or dV or dT
         char y = s.charAt(1);//y is V or I or T
         //System.out.println("setDIVT called  "+getNumber(s.substring(s.indexOf(" "))));//for checking the method
-        double x = getNumber(s.substring(s.indexOf(" ")));
+        double x = getNumber(s.substring(s.indexOf(" ")+1));
         if(x!=-1) {//numbers are positive and not a String
             switch (y) {
                 case 'I'://dI
@@ -180,7 +180,7 @@ public class Data {
     }
 
     void setMaxT(String s){//seting .tran time  "MaxT"
-        double x = getNumber(s.substring(s.indexOf(" ")));
+        double x = getNumber(s.substring(s.indexOf(" ")+1));
         if(x!=-1){
             if(s.substring(0,s.indexOf(" ")).equals(".tran"))
                 MaxT = x;
@@ -229,6 +229,7 @@ public class Data {
                 x *= 1e9;
                 break;
             default:
+                x = Double.parseDouble(s);
                 break;
         }
         return x;

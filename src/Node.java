@@ -12,7 +12,7 @@ public class Node { //normal node
 
     boolean added;
     String union;
-    int error2;
+    int error3;
 
     //constructors
     Node() {
@@ -24,7 +24,7 @@ public class Node { //normal node
         added = false;
         //union = Integer.parseInt(s);
         union = s;
-        error2 = 0;
+        error3 = 0;
         v = new double[100000];
     }
 
@@ -54,7 +54,7 @@ public class Node { //normal node
         return i;//input current
     }
 
-    void print(){//only for test
-        System.out.println("node"+name+" N:"+elements.size()+" added:"+added+" Union:"+union);//node1 N:3
+    void print(double t){//only for test
+        System.out.println("node"+name+" N:"+elements.size()+" added:"+added+" Union:"+union+"  v : "+v[(int)(t/Data.dT)]);//node1 N:3
     }
 }

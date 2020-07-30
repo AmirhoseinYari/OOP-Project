@@ -18,7 +18,7 @@ public class Solve {
         MaxT = Data.MaxT;
         itr = 0;// t/dT
         createUnions();
-        error2check();
+        error3check();//voltage sources error
         solve();
     }
 
@@ -38,17 +38,27 @@ public class Solve {
     }
 
     void solve(){
-        System.out.println(unions.get(1).inCurrent(0));
+        //unions.get(0).setAllVoltages(0,0.0);
+        //System.out.println(unions.get(1).inCurrent(0));
+        //Data.nodes.get("1").print(0.005);
+        while (t<=MaxT){
+            System.out.println("time : "+t);
+            for(Union u : unions) {
+                u.solve(t);
+                u.print(t);
+            }
+            t+=dT;
+        }
     }
 
     void error2check(){//for checking -2 error  (current source problems)
-        for(Node n : Data.nodesAL)
-            if(n.error2>1) Data.flag=2;
-         if(Data.flag==2) System.out.println("-2 error");
+
     }
 
     void error3check(){//for checking -3 error  (voltage source problems)
-
+        for(Node n : Data.nodesAL)
+            if(n.error3>1) Data.flag=2;
+        if(Data.flag==2) System.out.println("-3 error");
     }
 
     void error4check(){//for checking -4 error  (ground problems)

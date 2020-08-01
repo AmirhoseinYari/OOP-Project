@@ -49,13 +49,16 @@ public class Union {
             I1 = inCurrent(t);
             setAllVoltages(v + Data.dV, t);
             I2 = inCurrent(t);
-            while (Math.abs(I2)>Data.dI){
+            int flag = 0;
+            while (Math.abs(I1)>Data.dI&&flag==0){
                 //System.out.println("while solve");
+                flag++;
                 setAllVoltages(v,t);
                 I1 = inCurrent(t);
                 setAllVoltages(v + Data.dV, t);
                 I2 = inCurrent(t);
                 v += (Math.abs(I1) - Math.abs(I2)) / Data.dI * Data.dV;
+                //v += Math.abs(I1) / Data.dI * Data.dV;
             }
             setAllVoltages(v, t);
         }

@@ -38,13 +38,13 @@ public class CurrentSource extends Towports {
         int itr = (int)(t/Data.dT);
         if(flag == 0)//independent
             if(A == 0)//DC
-                i[itr] = I;
+                i[itr] = -I;
             else//AC
-                i[itr] = I + A * Math.sin(2*Math.PI*f*t+phi);
+                i[itr] = -(I + A * Math.sin(2*Math.PI*f*t+phi));
         if(flag == 1)//G
-            i[itr] = a*(n1.v[itr]-n2.v[itr]);
+            i[itr] = -a*(n1.v[itr]-n2.v[itr]);
         if(flag == 2)//F
-            i[itr] = a*element.calI(t);
+            i[itr] = -a*element.calI(t);
 
         return i[itr];
     }
